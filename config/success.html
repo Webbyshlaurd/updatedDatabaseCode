@@ -1,11 +1,32 @@
+<?php session_start(); // Start the session
+
+// Check if the username is set in the session
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username']; // Retrieve the username from the session
+} else {
+    // If the username is not set, handle the case accordingly (e.g., redirect to the login page)
+    header("Location: login.php");
+    exit;
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    link
 </head>
 <body>
-   <h1>SUCCESS</h1> 
+   <h1>Welcome <?php echo htmlspecialchars($username)?>!</h1>
+   <div class="payslip">Last Payslip: 400$</div>
+   <div class="shifts">
+    
+   </div>
 </body>
 </html>
+
+<?php
